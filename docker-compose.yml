@@ -1,0 +1,12 @@
+services:
+  llm:
+    build: .
+    platform: linux/arm64
+    container_name: llm-service
+    volumes:
+      - ./models:/app/models
+      - ./configs:/app/configs
+      - ./scripts:/app/scripts
+      - ./responses:/app/responses
+    stdin_open: true
+    tty: true
